@@ -34,10 +34,7 @@ export const updatePost = (id, post) => async (dispatch) => {
 
 export const likePost = (id) => async (dispatch) => {
   try {
-    console.log ("in the like", id);
-
     const { data } = await api.likePost(id);
-console.log ("got stuff back from like api", data);
     dispatch({ type: LIKE, payload: data });
   } catch (error) {
     console.log(error);
